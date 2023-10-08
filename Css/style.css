@@ -1,0 +1,322 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+/**
+*
+* Testing
+*
+**/
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  width: 10px;
+  background-color: #ffffff;
+  border-left: 0 solid #ffffff;
+  border-right: 0 solid #ffffff;
+  margin-block: 3px;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #696fdd;
+  width: 15% !important;
+  height: 15% !important;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar:hover {
+  cursor: pointer;
+}
+
+::-moz-selection {
+  /* code for firefox */
+  color: #ffffff;
+  background-color: #696fdd;
+}
+
+::selection {
+  /* code for firefox */
+  color: #ffffff;
+  background-color: #696fdd;
+}
+
+/* end variables */
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  /*small*/
+  /* tablet */
+  /* Medium */
+  /* desktop  */
+}
+@media (min-width: 577px) {
+  .container {
+    width: 550px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1300px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/*! start variables*/
+.app .all-card .card-there, .app .all-card .card-two, .app .all-card .card-one {
+  color: #6d708d;
+  background-color: #ffffff;
+  padding: 36px 30px 30px;
+  flex: 1 0 350px;
+  max-width: 320px;
+  box-shadow: 0 1rem 1.5rem 0.5rem hsla(237, 63%, 64%, 0.1);
+}
+.app .all-card .card-there .Packages-name, .app .all-card .card-two .Packages-name, .app .all-card .card-one .Packages-name {
+  font-size: 20px;
+  margin: 30px 0;
+}
+.app .all-card .card-there .Packages-price, .app .all-card .card-two .Packages-price, .app .all-card .card-one .Packages-price {
+  color: #494c5f;
+  font-size: 60px;
+  margin: 10px 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.app .all-card .card-there .Features, .app .all-card .card-two .Features, .app .all-card .card-one .Features {
+  list-style: none;
+  color: #6d708d;
+}
+.app .all-card .card-there .Features li, .app .all-card .card-two .Features li, .app .all-card .card-one .Features li {
+  list-style: none;
+  border-top: 1px solid #dcdde5;
+  padding: 18px 0;
+  font-size: 15px;
+  line-height: 1.3;
+}
+.app .all-card .card-there .Features li:last-child, .app .all-card .card-two .Features li:last-child, .app .all-card .card-one .Features li:last-child {
+  border-bottom: 1px solid #dcdde5;
+}
+
+.app .all-card .card-there .btn, .app .all-card .card-two .btn, .app .all-card .card-one .btn {
+  display: block;
+  border: none;
+  background-image: linear-gradient(to right, #a3a8f0, #696fdd);
+  color: #ffffff;
+  margin-top: 30px;
+  padding: 12px 50px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: none;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+.app .all-card .card-there .btn:hover, .app .all-card .card-two .btn:hover, .app .all-card .card-one .btn:hover {
+  background: transparent;
+  border: 1px solid #696fdd;
+  color: #696fdd;
+}
+
+/*! end variables*/
+/*! start Global Rules*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  line-height: 1.15;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+body::before {
+  content: "";
+  background-image: url(../images/bg-top.svg);
+  background-repeat: no-repeat;
+  background-position: top right;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+body::after {
+  content: "";
+  background-image: url(../images/bg-bottom.svg);
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+@media (max-width: 999px) {
+  body::after {
+    bottom: -130%;
+  }
+}
+
+:root {
+  background-color: #f7f7ff;
+}
+
+/*! end Global Rules*/
+/*! start code */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.app .our {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  margin: 60px auto 100px;
+}
+.app .our .title {
+  color: #6d708d;
+  font-size: 30px;
+}
+.app .our .switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+.app .our .switch p {
+  font-size: 20px;
+  color: #b3b5c6;
+}
+.app .our .switch input {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 25px;
+  background-image: linear-gradient(to right, #a3a8f0, #696fdd);
+  position: relative;
+  width: 55px;
+  height: 30px;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.app .our .switch input::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  background-color: #ffffff;
+  transition: left 0.3s;
+}
+.app .our .switch input:hover {
+  opacity: 0.8;
+}
+.app .our .switch input:checked::after {
+  left: 30%;
+}
+.app .all-card {
+  display: flex;
+  justify-content: center;
+  gap: 0px;
+  text-align: center;
+}
+.app .all-card .card-one {
+  border-radius: 12px 0px 0px 12px;
+}
+.app .all-card .card-two {
+  border-radius: 12px;
+  margin-top: -25px;
+  margin-bottom: -18px;
+  background-image: linear-gradient(to right, #a3a8f0, #696fdd);
+  color: #ffffff;
+}
+.app .all-card .card-two .Packages-price {
+  color: #ffffff;
+}
+.app .all-card .card-two .Features {
+  color: #ffffff;
+}
+.app .all-card .card-two .btn {
+  background: #ffffff;
+  color: #696fdd;
+}
+.app .all-card .card-two .btn:hover {
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}
+.app .all-card .card-there {
+  border-radius: 0px 12px 12px 0px;
+}
+@media (max-width: 999px) {
+  .app .all-card {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
+  .app .all-card .card-one,
+  .app .all-card .card-two,
+  .app .all-card .card-there {
+    border-radius: 12px;
+  }
+}
+
+/*! start Attribution */
+.attribution {
+  color: #494c5f;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 20px 0;
+  text-align: center;
+  width: -webkit-fill-available;
+}
+.attribution a {
+  font-size: smaller;
+  text-decoration: none;
+  color: #696fdd;
+  text-transform: capitalize;
+  font-size: 12px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.attribution a:hover::after {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 600;
+  content: "\f0a9";
+  font-size: 14px;
+  padding: 0 8px;
+}
+
+/*! end Attribution */
+/*! end code *//*# sourceMappingURL=style.css.map */

@@ -1,0 +1,281 @@
+// import file to font app
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
+// import file to media cwery
+@import "_breakpoints.scss";
+
+// import create Custom-Scrollbars-&-Selection-color
+@import "_Custom-Scrollbars-&-Selection-color.scss";
+
+// import containerScreen
+@import "_containerScreen.scss";
+
+/*! start variables*/
+$colorNormal: #ffffff;
+$colorHeading: #494c5f;
+$colorSubheading: #6d708d;
+$blue: #696fdd;
+$violet: #a3a8f0;
+$very-light-grayish-blue: #dcdde5;
+$light-grayish-blue: #b3b5c6;
+
+%card {
+  color: $colorSubheading;
+  background-color: $colorNormal;
+  padding: 36px 30px 30px;
+  flex: 1 0 350px;
+  max-width: 320px;
+  box-shadow: 0 1rem 1.5rem 0.5rem hsl(237deg 63% 64% / 10%);
+  .Packages-name {
+    font-size: 20px;
+    margin: 30px 0;
+  }
+  .Packages-price {
+    color: $colorHeading;
+    font-size: 60px;
+    margin: 10px 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+%Features {
+  list-style: none;
+  color: $colorSubheading;
+  li {
+    list-style: none;
+    border-top: 1px solid $very-light-grayish-blue;
+    padding: 18px 0;
+    font-size: 15px;
+    line-height: 1.3;
+  }
+  li:last-child {
+    border-bottom: 1px solid $very-light-grayish-blue;
+  }
+}
+
+%button {
+  display: block;
+  border: none;
+  background-image: linear-gradient(to right, $violet, $blue);
+  color: $colorNormal;
+  margin-top: 30px;
+  padding: 12px 50px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: none;
+  letter-spacing: 2px;
+  text-decoration: none;
+  &:hover {
+    background: transparent;
+    border: 1px solid $blue;
+    color: $blue;
+  }
+}
+
+/*! end variables*/
+/*! start Global Rules*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  line-height: 1.15;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  &::before {
+    content: "";
+    background-image: url(../images/bg-top.svg);
+    background-repeat: no-repeat;
+    background-position: top right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+  }
+  &::after {
+    content: "";
+    background-image: url(../images/bg-bottom.svg);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    @include media("<=999px") {
+      bottom: -130%;
+    }
+  }
+}
+
+:root {
+  background-color: #f7f7ff;
+}
+
+/*! end Global Rules*/
+/*! start code */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.app {
+  .our {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    margin: 60px auto 100px;
+    .title {
+      color: $colorSubheading;
+      font-size: 30px;
+    }
+    .switch {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      p {
+        font-size: 20px;
+        color: $light-grayish-blue;
+      }
+      input {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 25px;
+        background-image: linear-gradient(to right, $violet, $blue);
+        position: relative;
+        width: 55px;
+        height: 30px;
+        outline: none;
+        cursor: pointer;
+        transition: background 0.3s;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 70%;
+          transform: translate(-50%, -50%);
+          border-radius: 50%;
+          height: 20px;
+          width: 20px;
+          background-color: $colorNormal;
+          transition: left 0.3s;
+        }
+        &:hover {
+          opacity: 0.8;
+        }
+        &:checked {
+          &::after {
+            left: 30%;
+          }
+        }
+      }
+    }
+  }
+  .all-card {
+    display: flex;
+    justify-content: center;
+    gap: 0px;
+    text-align: center;
+    .card-one {
+      @extend %card;
+      border-radius: 12px 0px 0px 12px;
+      .Features {
+        @extend %Features;
+      }
+      .btn {
+        @extend %button;
+      }
+    }
+    .card-two {
+      @extend %card;
+      border-radius: 12px;
+      margin-top: -25px;
+      margin-bottom: -18px;
+      background-image: linear-gradient(to right, $violet, $blue);
+      color: $colorNormal;
+      .Packages-price {
+        color: $colorNormal;
+      }
+      .Features {
+        @extend %Features;
+        color: $colorNormal;
+      }
+      .btn {
+        @extend %button;
+        background: $colorNormal;
+        color: $blue;
+        &:hover {
+          border: 1px solid $colorNormal;
+          color: $colorNormal;
+        }
+      }
+    }
+    .card-there {
+      @extend %card;
+      border-radius: 0px 12px 12px 0px;
+      .Features {
+        @extend %Features;
+      }
+      .btn {
+        @extend %button;
+      }
+    }
+    @include media("<=999px") {
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
+      .card-one,
+      .card-two,
+      .card-there {
+        border-radius: 12px;
+      }
+    }
+  }
+}
+/*! start Attribution */
+.attribution {
+  color: $colorHeading;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 20px 0;
+  text-align: center;
+  width: -webkit-fill-available;
+  a {
+    font-size: smaller;
+    text-decoration: none;
+    color: $blue;
+    text-transform: capitalize;
+    font-size: 12px;
+    font-weight: 400;
+    white-space: nowrap;
+    &:hover::after {
+      font-family: "Font Awesome 6 Free";
+      font-weight: 600;
+      content: "\f0a9";
+      font-size: 14px;
+      padding: 0 8px;
+    }
+  }
+}
+/*! end Attribution */
+/*! end code */
